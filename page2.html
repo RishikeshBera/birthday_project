@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jaaniye ❤️</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html, body {
+      height: 100%;
+      width: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      overflow-x: hidden;
+      color: white;
+    }
+    .video-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -1;
+      filter: brightness(0.5);
+    }
+    h1 {
+      text-align: center;
+      color: #ff80ab;
+      margin: 2rem 0;
+      font-size: 3rem;
+      animation: fadeIn 2s ease-in-out;
+    }
+    .photo-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+    .photo-card {
+      background: rgba(255,255,255,0.05);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+      padding: 1rem;
+      text-align: center;
+    }
+    .photo-card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .caption {
+      margin-top: 0.75rem;
+      font-size: 1rem;
+      color: #ffcdd2;
+      min-height: 1.5em;
+    }
+    .button-wrapper {
+      text-align: center;
+      margin: 3rem 0;
+    }
+    .nav-button {
+      display: inline-block;
+      margin: 0 1rem;
+      padding: 0.8rem 2rem;
+      background-color: #ff4da6;
+      color: white;
+      font-size: 1.2rem;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: background 0.3s ease, transform 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+    .nav-button:hover {
+      background-color: #e84393;
+      transform: scale(1.05);
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <video autoplay muted loop playsinline class="video-bg" id="bg-video">
+    <source src="eyes2.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <h1>Jaaniye ❤️</h1>
+
+  <div class="photo-gallery">
+    <div class="photo-card">
+      <img src="img1.jpeg" alt="Photo 1" />
+      <div class="caption" data-text="In julfon ko hmesa aise hi rehne de moti "></div>
+    </div>
+    <div class="photo-card">
+      <img src="img2.jpeg" alt="Photo 2" />
+      <div class="caption" data-text="Jhut nhi bolte ,teri nazaro kaa dil pe hua hai asar "></div>
+    </div>
+    <div class="photo-card">
+      <img src="img3.jpeg" alt="Photo 3" />
+      <div class="caption" data-text="First pic on demand🫣 "></div>
+    </div>
+    <div class="photo-card">
+      <img src="img4.jpeg" alt="Photo 4" />
+      <div class="caption" data-text="Abe,kitni khubsurat hai re tu "></div>
+    </div>
+    <div class="photo-card">
+      <img src="img5.jpeg" alt="Photo 5" />
+      <div class="caption" data-text="Perfect cartoon frame 😂"></div>
+    </div>
+    <div class="photo-card">
+      <img src="img6.jpeg" alt="Photo 6" />
+      <div class="caption" data-text="Our first date,remeber?"></div>
+    </div>
+    <div class="photo-card">
+      <img src="img.7.jpeg" alt="Photo 7" />
+      <div class="caption" data-text="Aaye haaye ye smile!!.Uffff😵‍💫"></div>
+    </div>
+    <div class="photo-card">
+      <img src="img.8.jpeg" alt="Photo 8" />
+      <div class="caption" data-text="Koi ched ke dikhaaye mujhe😌🔥"></div>
+    </div>
+  </div>
+
+  <div class="button-wrapper">
+    <a href="page3.html" class="nav-button">Kill Zone 💘</a>
+    <a href="index.html" class="nav-button">Back to Home 🏠</a>
+  </div>
+
+  <script>
+    const captions = document.querySelectorAll('.caption');
+    captions.forEach((el) => {
+      const text = el.dataset.text;
+      let i = 0;
+      function type() {
+        if (i < text.length) {
+          el.textContent += text.charAt(i);
+          i++;
+          setTimeout(type, 55);
+        }
+      }
+      setTimeout(type, 1);
+    });
+
+    const video = document.getElementById('bg-video');
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'visible') {
+        video.play().catch(() => {});
+      }
+    });
+  </script>
+</body>
+</html>

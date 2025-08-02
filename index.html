@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body, html {
+      height: 100%;
+      width: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow-x: hidden;
+    }
+    .video-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -1;
+      filter: brightness(0.5);
+    }
+    .note-container {
+      position: relative;
+      z-index: 1;
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+      max-width: 90vw;
+      width: 600px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+      margin: 5vh auto;
+      color: #eee;
+      animation: fadeIn 2s ease-out;
+    }
+    h1 {
+      font-size: 2.2rem;
+      color: #ff4d79;
+    }
+    p {
+      font-size: 1rem;
+      line-height: 1.6;
+      white-space: pre-wrap;
+    }
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+      p {
+        font-size: 0.95rem;
+      }
+      .note-container {
+        padding: 1.5rem;
+      }
+      .next-button {
+        font-size: 0.95rem;
+        padding: 0.6rem 1.5rem;
+      }
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .next-button {
+      margin-top: 2rem;
+      padding: 0.75rem 2rem;
+      font-size: 1rem;
+      background-color: #ff4d79;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .next-button:hover {
+      background-color: #e8436e;
+    }
+  </style>
+</head>
+<body>
+  <video autoplay muted loop playsinline class="video-bg" id="bg-video">
+    <source src="eyes2.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div class="note-container">
+    <h1>Oiii Jaaniye ❤️</h1>
+    <p>
+      Happy birthday yaar, bhut mehnat lga bhai isko bnaane me. Hope so tereko pasand aayega🤞.
+      Happy Birthday again my mirror copy.
+
+      Pta hai tu mere liye itni special kyun hai? Because naa you came in such time jb mere ps baat krne ke liye koi nhi tha,
+      and the real and awkward thing is that hm kabhi sapne me bhi nhi soche the ki we will be friends some day.
+
+      And I also want to clear a thing ki tu befikar reh yaar, I’ll always be your friend.
+      Aur hm bolte bhi hai naa — chutiya hoga jo tere palle pde 😂.
+
+      Khaane wagera me dhyaan de , aur tabiyat kaa dhyaan rakh . Really want to flirt with you forever😋. 
+😳
+      Harshi, you are really special to me buddy. Jaante hai hm thore ajeeb hai — seh le 🤧 — this is my way of friendship.
+      I give my all. Sunn, thank you really for your friendship.
+
+      Enjoy your day Moti, aur haan tu chubby hi best lgti hai 🐷.
+      College jaake kuposit mt bnjaaa 😤.
+
+      Love you buddy, just as a friend 🫣.
+      Wish you your happpiest birthday. Bhagwaan tereko khush rakhe and all your dreams and wishes comes true.
+      Promising you, har birthday pe kuch crazy bnake dunga.
+    </p>
+    <button class="next-button" onclick="location.href='page2.html'">Your Jhalak ✨</button>
+  </div>
+  <script>
+    // Ensure background video continues playing when returning to the page
+    const video = document.getElementById('bg-video');
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'visible') {
+        video.play().catch(() => {});
+      }
+    });
+  </script>
+</body>
+</html>
